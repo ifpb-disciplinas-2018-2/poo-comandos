@@ -12,8 +12,42 @@ import javax.swing.JOptionPane;
 public class ComandosDeEntrada {
 
     public static void main(String[] args) {
+        lendoDoInputDialogQuestion();
+        lendoDoInputDialogError();
         lendoDaEntradaPadrao();
         lendoDoInputDialog();
+    }
+
+    private static void lendoDoInputDialogQuestion() throws HeadlessException {
+        String[] cursos = {
+            "Licenciatura em Computação",
+            "Ciências da Computação",
+            "Análise e Desenvolvimento de Sistemas"
+        };
+
+        Object curso = JOptionPane.showInputDialog(
+            null, // parent
+            "Qual é seu curso?", // mensagem
+            "Escolha seu curso", // Titulo
+            JOptionPane.QUESTION_MESSAGE, //questões
+            null, //icon
+            cursos, // opções
+            cursos[0] // valor inicial
+        );
+        System.out.println("curso selecionado: " + curso);
+
+    }
+
+    private static void lendoDoInputDialogError() throws HeadlessException {
+        String showInputDialog = JOptionPane.showInputDialog(
+            null,
+            "Qual o seu nome?",
+            "Digite seu nome",
+            JOptionPane.ERROR_MESSAGE
+        );
+        //ERROR_MESSAGE, INFORMATION_MESSAGE, WARNING_MESSAGE, QUESTION_MESSAGE, or PLAIN_MESSAGE
+        System.out.println("Digitado: " + showInputDialog);
+
     }
 
     private static void lendoDoInputDialog() throws NumberFormatException,HeadlessException {
