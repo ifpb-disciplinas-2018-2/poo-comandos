@@ -9,13 +9,60 @@ import javax.swing.JOptionPane;
  * @mail ricardo.job@ifpb.edu.br
  * @since 22/02/2019, 09:53:05
  */
-public class ComandosDeEntrada {
+public class ComandosDeEntradaSaida {
 
     public static void main(String[] args) {
-        lendoDoInputDialogQuestion();
-        lendoDoInputDialogError();
+
         lendoDaEntradaPadrao();
         lendoDoInputDialog();
+        lendoDoInputDialogError();
+        lendoDoInputDialogQuestion();
+        lendoDoConfirmDialog();
+        exibindoInformacaoMessageDialog();
+
+    }
+
+    private static void exibindoInformacaoMessageDialog() throws HeadlessException,NumberFormatException {
+        String primeiro = JOptionPane.showInputDialog(
+            "Digite o primeiro número"
+        );
+        String segundo = JOptionPane.showInputDialog(
+            "Digite o segundo número"
+        );
+
+        int soma = Integer.parseInt(primeiro) + Integer.parseInt(segundo);
+
+        JOptionPane.showMessageDialog(
+            null,
+            String.format(
+                "O valor da soma é: %d",soma
+            ),
+            "Resultado",
+            JOptionPane.ERROR_MESSAGE // ERROR_MESSAGE, INFORMATION_MESSAGE, WARNING_MESSAGE, QUESTION_MESSAGE
+        );
+
+    }
+
+    private static void lendoDoConfirmDialog() throws HeadlessException {
+        int opcao = JOptionPane.showConfirmDialog(
+            null,
+            "Você está gostando do curso",
+            "Curso de Licenciatura",
+            JOptionPane.YES_NO_OPTION //YES_NO_OPTION, YES_NO_CANCEL_OPTION, or OK_CANCEL_OPTION
+        );
+
+        switch (opcao) {
+            case JOptionPane.CANCEL_OPTION:
+                System.out.println("Cancelou");
+                break;
+            case JOptionPane.YES_OPTION:
+                System.out.println("Sim!!");
+                break;
+            case JOptionPane.NO_OPTION:
+                System.out.println("Não!!!");
+                break;
+        }
+
     }
 
     private static void lendoDoInputDialogQuestion() throws HeadlessException {
