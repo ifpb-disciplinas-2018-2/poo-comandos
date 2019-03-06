@@ -11,8 +11,8 @@ import javax.swing.table.AbstractTableModel;
  */
 public class PessoaTableModel extends AbstractTableModel {
 
-    private Pessoas pessoas;
-    private String[] colunas = {"Nome","CPF"};
+    private final Pessoas pessoas;
+    private final String[] colunas = {"Nome","CPF"};
 
     public PessoaTableModel(Pessoas pessoas) {
         this.pessoas = pessoas;
