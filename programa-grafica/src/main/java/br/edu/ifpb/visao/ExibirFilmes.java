@@ -10,6 +10,8 @@ import br.edu.ifpb.modelo.Categoria;
 /**
  *
  * @author Ricardo Job
+ * @mail ricardo.job@ifpb.edu.br
+ * @since 06/03/2019, 10:25:27
  */
 public class ExibirFilmes extends javax.swing.JFrame {
 
